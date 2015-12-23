@@ -1,4 +1,4 @@
-package streamsbrownbag.model;
+package model;
 
 import java.util.*;
 

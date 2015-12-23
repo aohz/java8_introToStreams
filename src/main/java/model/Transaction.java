@@ -1,6 +1,4 @@
-package streamsbrownbag.model;
-
-import streamsbrownbag.model.Trader;
+package model;
 
 public class Transaction {
 
