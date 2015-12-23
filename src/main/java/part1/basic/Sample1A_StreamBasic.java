@@ -1,21 +1,32 @@
-package streamsbrownbag.basic;
+package part1.basic;
+
+import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import streamsbrownbag.model.Dish;
-
-import static java.util.Comparator.comparing;
 import java.util.List;
-import static java.util.stream.Collectors.toList;
 
-public class StreamBasic {
+import model.Dish;
 
-    public static void main(String... args) {
+/**
+ * Select the Dishes that have less than 400 calories, 
+ * sort them according to their calories 
+ * and print them
+ * 
+ * @author AOHZ
+ *
+ */
+public class Sample1A_StreamBasic {
+
+	public static void main(String[] args) {
         // Java 7
+		System.out.println("======Java 7======");
+		
         getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
 
-        System.out.println("---");
+        System.out.println("======Java 8======");
 
         // Java 8
         getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
@@ -23,6 +34,7 @@ public class StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes) {
+		// Filter the dishes
         List<Dish> lowCaloricDishes = new ArrayList<>();
         for (Dish d : dishes) {
             if (d.getCalories() > 400) {
