@@ -11,32 +11,39 @@ public class OptionalSolution {
 	private static final String DEFAULT_VALUE = "Empty";
 	private static final String REAL_VALUE = "35.527756";
 
-	private String getNullSafeValue(Position position) {
-		return Optional.ofNullable(position).flatMap(Position::getLatitude).map(Latitude::getValue).orElse(DEFAULT_VALUE);
+	private String getNullSafeValue(GPSData data) {
+		return Optional.ofNullable(data).flatMap(GPSData::getPosition)
+				.flatMap(Position::getLatitude).map(Latitude::getValue).orElse(DEFAULT_VALUE);
 	}
 
 	@Test
 	public void testNoNullElements() {
-		Position position = new Position(new Latitude(REAL_VALUE));
-		Assert.assertEquals(REAL_VALUE, getNullSafeValue(position));
+		GPSData data = new GPSData(new Position(new Latitude(REAL_VALUE)));
+		Assert.assertEquals(REAL_VALUE, getNullSafeValue(data));
+	}
+	
+	@Test
+	public void testGpsDataIsNull() {
+		GPSData data = null;
+		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
 	}
 
 	@Test
 	public void testPositionIsNull() {
-		Position position = null;
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(position));
+		GPSData data = new GPSData(null);
+		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
 	}
 
 	@Test
 	public void testLatitudeIsNull() {
-		Position position = new Position(null);
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(position));
+		GPSData data = new GPSData(new Position(null));
+		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
 	}
 
 	@Test
 	public void testValueIsNull() {
-		Position position = new Position(new Latitude(null));
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(position));
+		GPSData data = new GPSData(new Position(new Latitude(null)));
+		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
 	}
 }
 
