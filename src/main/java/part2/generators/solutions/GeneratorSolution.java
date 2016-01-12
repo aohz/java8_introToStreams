@@ -1,4 +1,4 @@
-package part2.generators;
+package part2.generators.solutions;
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class Sample2_Generator {
+public class GeneratorSolution {
 
 	public static void main(String args[]) {
 

@@ -1,4 +1,4 @@
-package part1.basic;
+package part1.basic.exercises;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
@@ -18,7 +18,7 @@ import model.Dish;
  * @author AOHZ
  *
  */
-public class Sample1A_StreamBasic {
+public class Sample1A_StreamBasicExercise {
 
 	public static void main(String[] args) {
         // Java 7
@@ -55,10 +55,7 @@ public class Sample1A_StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
-        return dishes.stream()
-                .filter(d -> d.getCalories() > 400)
-                .sorted(comparing(Dish::getCalories))
-                .map(Dish::getName)
-                .collect(toList());
+        // TODO implement similar functionality than getLowCaloricDishesNamesInJava7 method using streams
+        return null;
     }
 }

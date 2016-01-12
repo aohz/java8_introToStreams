@@ -1,4 +1,4 @@
-package part4;
+package part4.exercises;
 
 import java.util.Arrays;
 import java.util.List;

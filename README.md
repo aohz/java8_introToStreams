@@ -4,11 +4,12 @@
 
 
 ## Exercises:
-### Basic stream (Jse8_streams/src/main/java/part1/basic):
-- Review and understand basic use of streams in the Sample1A_StreamBasic.java and Sample1B_Traversing.java files.
+### Basic stream (Jse8_streams/src/main/java/part1/basic/exercises):
+- Implement commented TODO lines at Sample1A_StreamBasicExercise.java using streams.
+- Implement commented TODO lines at Sample1B_TraversingExercise.java using streams.
 
-### Generators (Jse8_streams/src/main/java/part2/generators):
-- Review and understand basic use of streams in the Sample2_Generator.java file.
+### Generators (Jse8_streams/src/main/java/part2/generators/exercises):
+- Implement commented TODO lines at GeneratorExercise.java using streams.
 
 ### Filtering (Jse8_streams/src/main/java/part3/filtering/exercises):
 - Given FileManagerExercise.java class, implement using streams, read the lines at data.txt file and count how many are different ignoring the first line. Also, count how many lines are different ignoring those lines starting with ‘==‘.

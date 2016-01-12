@@ -1,4 +1,4 @@
-package part1.basic;
+package part1.basic.solutions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 import model.Person;
 
-public class Sample1B_Traversing {
+public class Sample1B_TraversingSolution {
 
 	public static void main(String args[]) {
 
