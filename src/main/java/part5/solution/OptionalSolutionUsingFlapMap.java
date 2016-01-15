@@ -6,7 +6,7 @@ import java.util.Optional;
 
 import org.junit.Assert;
 
-public class OptionalSolution {
+public class OptionalSolutionUsingFlapMap {
 
 	private static final String DEFAULT_VALUE = "Empty";
 	private static final String REAL_VALUE = "35.527756";
@@ -40,41 +40,41 @@ public class OptionalSolution {
 	}
 }
 
-class GPSData {
-
-	private Position position;
-
-	public GPSData(Position position) {
-		this.position = position;
-	}
-
-	public Optional<Position> getPosition() {
-		return Optional.ofNullable(this.position);
-	}
-}
-
-class Position {
-
-	private Latitude latitude;
-
-	public Position(Latitude latitude) {
-		this.latitude = latitude;
-	}
-
-	public Optional<Latitude> getLatitude() {
-		return Optional.ofNullable(this.latitude);
-	}
-}
-
-class Latitude {
-
-	private String value;
-
-	public Latitude(String value) {
-		this.value = value;
-	}
-
-	public String getValue() {
-		return this.value;
-	}
-}
+//class GPSData {
+//
+//	private Position position;
+//
+//	public GPSData(Position position) {
+//		this.position = position;
+//	}
+//
+//	public Optional<Position> getPosition() {
+//		return Optional.ofNullable(this.position);
+//	}
+//}
+//
+//class Position {
+//
+//	private Latitude latitude;
+//
+//	public Position(Latitude latitude) {
+//		this.latitude = latitude;
+//	}
+//
+//	public Optional<Latitude> getLatitude() {
+//		return Optional.ofNullable(this.latitude);
+//	}
+//}
+//
+//class Latitude {
+//
+//	private String value;
+//
+//	public Latitude(String value) {
+//		this.value = value;
+//	}
+//
+//	public String getValue() {
+//		return this.value;
+//	}
+//}

@@ -1,4 +1,4 @@
-package part1.basic.solutions;
+package part1.basic.exercises;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 import model.Person;
 
-public class Sample1B_TraversingSolution {
+public class Sample1_TraversingExercise {
 
 	public static void main(String args[]) {
 
@@ -39,6 +39,6 @@ public class Sample1B_TraversingSolution {
 	private static void printOldPeopleNamesInJava8(List<Person> people, Predicate<Person> pred) {
 
 		// With Streams
-		people.stream().filter(pred).forEach(p -> System.out.println(p.getName()));
+	    // TODO implement similar functionality than in printOldPeopleNamesInJava7 method using streams
 	}
 }

@@ -1,13 +1,8 @@
 package part2.generators.exercises;
 
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.function.IntSupplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
-
-import services.FileService;
 
 public class GeneratorExercise {
 
