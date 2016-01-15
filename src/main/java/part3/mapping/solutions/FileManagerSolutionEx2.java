@@ -7,7 +7,15 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class FileManagerSolution1 {
+/**
+ * Using “data.txt” 
+ * - count the number of words
+ * - print the length of each word
+ * 
+ * @author AOHZ
+ *
+ */
+public class FileManagerSolutionEx2 {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
@@ -16,7 +24,7 @@ public class FileManagerSolution1 {
 			countWordsUsingFlapMap(path);
 
 			System.out.println("=======MapToInt==========");
-			countLinesUsingMapToInt(path);
+			printTheLengthOfEachWordhUsingMapToInt(path);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -25,15 +33,16 @@ public class FileManagerSolution1 {
 
 	public static void countWordsUsingFlapMap(Path path) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			
+
 			System.out.println(lines.flatMap((s) -> Stream.of(s.split(" "))).count());
 		}
 	}
-	
-	public static void countLinesUsingMapToInt(Path path) throws IOException {
+
+	public static void printTheLengthOfEachWordhUsingMapToInt(Path path) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			
-			System.out.println(lines.peek(System.out::print).mapToInt((s)->s.split(" ").length).peek(System.out::println).sum());
+
+			lines.flatMap((s) -> Stream.of(s.split(" "))).mapToInt(String::length).forEach(System.out::println);
 		}
 	};
+	
 }
