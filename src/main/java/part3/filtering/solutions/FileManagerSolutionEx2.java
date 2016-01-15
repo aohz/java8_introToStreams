@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class FileManagerSolution2 {
+public class FileManagerSolutionEx2 {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();

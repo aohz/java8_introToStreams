@@ -5,13 +5,19 @@ import java.nio.file.Path;
 
 import services.FileService;
 
+/**
+ * Count the number of lines in “data.txt” excluding the header and duplicate lines 
+ * 
+ * @author aohz
+ *
+ */
 public class FileManagerExercise {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
 		try {
 			printLineNumber(path);
-			printLineNumberUsingFiler(path);
+			printLineNumberUsingFilter(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -22,7 +28,7 @@ public class FileManagerExercise {
 		System.out.println("Lines: " + nLines);
 	}
 
-	public static void printLineNumberUsingFiler(Path path) throws IOException {
+	public static void printLineNumberUsingFilter(Path path) throws IOException {
 		long nLines = 0;
 		System.out.println("Lines: " + nLines);
 	}

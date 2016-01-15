@@ -36,7 +36,10 @@ public class GeneratorSolution {
 	}
 
 	private static Stream<String> generateUsingStreamOf() {
+		System.out.println("========Sample end=========");
 		return Stream.of("Java 8", "Brown", "Bag", "Session");
+		
+		
 	}
 
 	private static IntStream generateUsingArraysStream() {
