@@ -1,16 +1,27 @@
 package part5.exercises;
 
+import org.junit.Assert;
 import org.junit.Test;
 
-import org.junit.Assert;
-
+/**
+ * Make this code NullPointerException safe using Optional 
+ * @author aohz
+ *
+ */
 public class OptionalExercise {
 
+	private static final String REAL_VALUE = "35.527756";
 	
 	@Test
 	public void testNoNullElements() {
-		Position position = new Position(new Latitude(35.527756));
-		Assert.assertEquals(35.527756, position.getLatitude().getValue().doubleValue(), 0.00001);
+		Position position = new Position(new Latitude(REAL_VALUE));
+		Assert.assertEquals(REAL_VALUE, position.getLatitude().getValue());
+	}
+	
+	@Test
+	public void testValueIsNull() {
+		Position position = new Position(new Latitude(null));
+		Assert.assertNull(position.getLatitude().getValue());
 	}
 	
 	@Test
@@ -24,13 +35,7 @@ public class OptionalExercise {
 	public void testLatitudeIsNull() {
 		Position position = new Position(null);
 		Assert.assertNull(position.getLatitude().getValue());
-	}
-	
-	@Test
-	public void testValueIsNull() {
-		Position position = new Position(new Latitude(null));
-		Assert.assertNull(position.getLatitude().getValue().doubleValue());
-	}
+	}	
 }
 
 class GPSData {
@@ -61,13 +66,13 @@ class Position {
 
 class Latitude {
 
-	private Double value;
+	private String value;
 
-	public Latitude(Double value) {
+	public Latitude(String value) {
 		this.value = value;
 	}
 
-	public Double getValue() {
+	public String getValue() {
 		return this.value;
 	}
 }

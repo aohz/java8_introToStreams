@@ -1,33 +1,33 @@
-package part4.reduce.solution;
+package part4.collect.exercises;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import model.Trader;
 import model.Transaction;
 
-public class TransactionManagerSolution {
+/**
+ * - Collect Traders names into a List 
+ * - Collect Traders names into a TreeSet
+ * - Create a Map were the key is the transaction year and the value is the sum of the transacions for that year
+ * 
+ * @author AOHZ
+ *
+ */
+public class TransactionManagerEx1 {
 
 	public static void main(String... args) {
 		List<Transaction> transactions = getTransactions();
+		
+		System.out.println("=====");
+		// Collect trader names into a list
+		
+		System.out.println("=====");
 				
-		System.out.println("=====");
-		// Biggest Transaction
-		Optional<Transaction> biggestTrans = transactions.stream().max((t1, t2) -> Integer.compare(t1.getValue(), t2.getValue()));
-		System.out.println(biggestTrans.get());
+		// Collect trader name into a TreeSet
 		
-		
-		System.out.println("=====");
-		
-		// Accumulate Transaction amounts
-		Transaction accumulateTrans = transactions.stream().reduce(
-				new Transaction(null, 0, 0),				
-				(t1, t2) -> 
-				new Transaction(null, 
-						Integer.max(t1.getYear(), t2.getYear()), 
-						t1.getValue() + t2.getValue()));
-		System.out.println(accumulateTrans);
+		// Create a Map were the key is the transaction year and the value is the sum of the transacions for that year
+
 	}
 
 	private static List<Transaction> getTransactions() {

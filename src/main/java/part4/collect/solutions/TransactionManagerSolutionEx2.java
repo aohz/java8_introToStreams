@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import model.Trader;
 import model.Transaction;
 
-public class TransactionManagerSolution2 {
+public class TransactionManagerSolutionEx2 {
 
 	public static void main(String... args) {
 		List<Transaction> transactions = getTransactions();

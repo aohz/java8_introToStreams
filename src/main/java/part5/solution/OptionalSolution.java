@@ -1,10 +1,9 @@
 package part5.solution;
 
-import org.junit.Test;
-
 import java.util.Optional;
 
 import org.junit.Assert;
+import org.junit.Test;
 
 public class OptionalSolution {
 
@@ -12,8 +11,11 @@ public class OptionalSolution {
 	private static final String REAL_VALUE = "35.527756";
 
 	private String getNullSafeValue(GPSData data) {
-		return Optional.ofNullable(data).flatMap(GPSData::getPosition)
-				.flatMap(Position::getLatitude).map(Latitude::getValue).orElse(DEFAULT_VALUE);
+		return Optional.ofNullable(data)
+				.flatMap(GPSData::getPosition)
+				.flatMap(Position::getLatitude)
+				.map(Latitude::getValue)
+				.orElse(DEFAULT_VALUE);
 	}
 
 	@Test
@@ -21,16 +23,16 @@ public class OptionalSolution {
 		GPSData data = new GPSData(new Position(new Latitude(REAL_VALUE)));
 		Assert.assertEquals(REAL_VALUE, getNullSafeValue(data));
 	}
-	
-	@Test
-	public void testGpsDataIsNull() {
-		GPSData data = null;
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
-	}
 
 	@Test
 	public void testPositionIsNull() {
 		GPSData data = new GPSData(null);
+		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
+	}
+
+	@Test
+	public void testGpsDataIsNull() {
+		GPSData data = null;
 		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
 	}
 
@@ -82,6 +84,6 @@ class Latitude {
 	}
 
 	public String getValue() {
-		return this.value;
+		return value;
 	}
 }

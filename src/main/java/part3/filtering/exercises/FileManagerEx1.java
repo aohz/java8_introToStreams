@@ -11,7 +11,7 @@ import services.FileService;
  * @author aohz
  *
  */
-public class FileManagerExercise {
+public class FileManagerEx1 {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
@@ -24,13 +24,11 @@ public class FileManagerExercise {
 	}
 
 	public static void printLineNumber(Path path) throws IOException {
-		long nLines = 0;
-		System.out.println("Lines: " + nLines);
+	
 	}
 
 	public static void printLineNumberUsingFilter(Path path) throws IOException {
-		long nLines = 0;
-		System.out.println("Lines: " + nLines);
+	
 	}
 
 }

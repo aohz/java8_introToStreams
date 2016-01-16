@@ -1,31 +1,32 @@
-package part4.collect.solutions;
+package part4.reduce.exercises;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 import model.Trader;
 import model.Transaction;
 
-public class TransactionManagerSolution1 {
+/**
+ * - Get the transaction with the biggest Amount 
+ * - Return a new transaction where:
+ * -- The author is null 
+ * -- The year is the newest 
+ * -- The value is the sum of all values
+ * 
+ * @author AOHZ
+ *
+ */
+public class TransactionManagerEx1 {
 
 	public static void main(String... args) {
 		List<Transaction> transactions = getTransactions();
+				
+		System.out.println("=====");
+		// Biggest Transaction	
 		
 		System.out.println("=====");
-		// Accumulate trader names into a list
-		List<String> list = transactions.stream().map((t) -> t.getTrader().getName()).collect(Collectors.toList());
 		
-		list.forEach(System.out::println);
-		
-		System.out.println("=====");
-				
-		// Accumulate trader name into a TreeSet		
-		TreeSet<String> set = transactions.stream().map(
-				(t) -> t.getTrader().getName()).collect(Collectors.toCollection(TreeSet::new));
-				
-		set.forEach(System.out::println);
+		// Accumulate Transaction amounts
 	}
 
 	private static List<Transaction> getTransactions() {

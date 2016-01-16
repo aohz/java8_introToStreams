@@ -7,14 +7,14 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class FileManagerSolution1 {
-
-	/**
-	 * Verify if all files lines contains the word “lazy” . Verify if any
-	 * contains the word “fox” . Get the first line that contains the word cat
-	 * 
-	 * @param args
-	 */
+/**
+ * - Verify if all files lines contains the word “lazy” . 
+ * - Verify if any contains the word “fox”
+ * - Get the first line that contains the word cat
+ * 
+ * @param args
+ */
+public class FileManagerSolutionEx1 {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
