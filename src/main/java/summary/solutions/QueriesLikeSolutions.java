@@ -1,4 +1,4 @@
-package part9.summary.solutions;
+package summary.solutions;
 
 import model.*;
 import java.util.*;
