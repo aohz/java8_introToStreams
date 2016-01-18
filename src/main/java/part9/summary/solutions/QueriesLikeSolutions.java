@@ -2,6 +2,7 @@ package part9.summary.solutions;
 
 import model.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
@@ -52,7 +53,9 @@ public class QueriesLikeSolutions {
                 .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
-                .reduce("", (n1, n2) -> n1 + n2);
+                .collect(Collectors.joining(" "));
+                //.reduce("", (n1, n2) -> n1 + " " + n2);
+        
         System.out.println(traderStr);
 
         // Query 5: Are there any trader based in Milan?
@@ -69,8 +72,10 @@ public class QueriesLikeSolutions {
 
         // Query 7: What's the highest value in all the transactions?
         int highestValue = transactions.stream()
-                .map(Transaction::getValue)
-                .reduce(0, Integer::max);
+                .mapToInt(Transaction::getValue)
+                .reduce(0, Integer::max);        
+        //transactions.stream().max(Comparator.comparing(Transaction::getValue)).get();
+        
         System.out.println(highestValue);
     }
 }
