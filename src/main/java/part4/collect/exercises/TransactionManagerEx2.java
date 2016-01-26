@@ -23,7 +23,7 @@ public class TransactionManagerEx2 {
 		// Trades Amount by user
 	
 		System.out.println("=====");
-		// Set containing the years of the transactions
+		// Set containing the years of the transactions made by each trader
 	
 	}
 

@@ -6,6 +6,12 @@ import java.util.function.Predicate;
 
 import model.Person;
 
+/**
+ * Print the name of the people older than 65
+ * 
+ * @author AOHZ
+ *
+ */
 public class Sample1_TraversingSolution {
 
 	public static void main(String args[]) {

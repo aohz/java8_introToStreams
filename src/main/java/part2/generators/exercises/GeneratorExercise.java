@@ -1,8 +1,13 @@
 package part2.generators.exercises;
 
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.function.IntSupplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import services.FileService;
 
 public class GeneratorExercise {
 
@@ -46,10 +51,17 @@ public class GeneratorExercise {
 		// TODO return an IntStream generated from the supplier
 		return null;
 	}
-
+	
 	private static Stream<String> generateUsingFileLines() {
-		Stream<String> lines = Stream.empty();
-		// TODO fill lines with lines of the file at FileService.getFilePath() using the charset Charset.defaultCharset() 
+		Stream<String> lines = Stream.empty();		
+		try {
+			// TODO return a stream with the lines of the file at FileService.getFilePath() using the charset Charset.defaultCharset() 
+			Path pah = FileService.getFilePath();
+			Charset charset = Charset.defaultCharset();
+			
+		} catch (Exception e) {
+			System.out.println(e);			
+		}
 		return lines;
 	}
 }

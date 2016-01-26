@@ -1,7 +1,9 @@
 package part4.match.exercises;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.stream.Stream;
 
 import services.FileService;
 
@@ -33,15 +35,21 @@ public class FileManagerEx1 {
 	}
 
 	public static void verifyAllContains(Path path, String wordToFind) throws IOException {
-		
+		try (Stream<String> lines = Files.lines(path);) {
+			System.out.println("TODO: Replace with stream processing");
+		}
 	}
 	
 	public static void verifyAnyContains(Path path, String wordToFind) throws IOException {
-		
+		try (Stream<String> lines = Files.lines(path);) {
+			System.out.println("TODO: Replace with stream processing");
+		}
 	}
 
 
 	public static void getFirst(Path path, String wordToFind) throws IOException {
-		
+		try (Stream<String> lines = Files.lines(path);) {
+			System.out.println("TODO: Replace with stream processing");
+		}
 	}
 }

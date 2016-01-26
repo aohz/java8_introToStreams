@@ -9,7 +9,13 @@ import java.util.stream.Collectors;
 
 import model.Trader;
 import model.Transaction;
-
+/**
+ * - Print the sum of the transactions amounts made by each Trader Return and
+ * - print a Set containing the years of the transactions made by each trader
+ * 
+ * @author AOHZ
+ *
+ */
 public class TransactionManagerSolutionEx2 {
 
 	public static void main(String... args) {
@@ -26,7 +32,7 @@ public class TransactionManagerSolutionEx2 {
 		
 		
 		System.out.println("=====");
-		// Set containing the years of the transactions		
+		// Set containing the years of the transactions made by each trader	
 		Map<String, Set<Integer>> yearsByTraders = 
 				transactions.stream().collect(Collectors.groupingBy((Transaction t) -> t.getTrader().getName(),	
 						Collectors.mapping((Transaction t) -> t.getYear(), Collectors.toSet())));
