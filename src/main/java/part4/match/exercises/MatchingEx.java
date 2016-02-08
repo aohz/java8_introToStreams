@@ -1,4 +1,4 @@
-package part4.match.solutions;
+package part4.match.exercises;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,17 +14,17 @@ import services.FileService;
  * 
  * @param args
  */
-public class FileManagerSolutionEx1 {
+public class MatchingEx {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
 		
 		try {
 			System.out.println("=======All==========");
-			verifyAllContains(path, "lazy");
+			verifyAllMatch(path, "lazy");
 
 			System.out.println("=======Any==========");
-			verifyAnyContains(path, "fox");
+			verifyAnyMatch(path, "fox");
 			
 			System.out.println("=======Find==========");
 			getFirst(path, "cat");
@@ -34,22 +34,22 @@ public class FileManagerSolutionEx1 {
 		}
 	}
 
-	public static void verifyAllContains(Path path, String wordToFind) throws IOException {
+	public static void verifyAllMatch(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.allMatch((s) -> s.contains(wordToFind)));
+			System.out.println("TODO: Replace with stream processing");
 		}
 	}
 	
-	public static void verifyAnyContains(Path path, String wordToFind) throws IOException {
+	public static void verifyAnyMatch(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.anyMatch((s) -> s.contains(wordToFind)));
+			System.out.println("TODO: Replace with stream processing");
 		}
 	}
 
 
 	public static void getFirst(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.filter((s) -> s.contains(wordToFind)).findFirst().get());
+			System.out.println("TODO: Replace with stream processing");
 		}
 	}
 }

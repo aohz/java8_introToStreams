@@ -1,4 +1,4 @@
-package part5.exercises;
+package part5.optional.exercises;
 
 import org.junit.Assert;
 import org.junit.Test;
