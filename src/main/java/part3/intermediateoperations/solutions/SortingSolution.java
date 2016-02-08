@@ -1,4 +1,4 @@
-package part3.filtering.solutions;
+package part3.intermediateoperations.solutions;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +17,7 @@ import services.FileService;
  * @author AOHZ
  *
  */
-public class FileManagerSolutionEx2 {
+public class SortingSolution {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
@@ -26,18 +26,18 @@ public class FileManagerSolutionEx2 {
 			Comparator<String> descending = ascending.reversed();
 			
 			System.out.println("=======Ascending==========");
-			printLines(path, ascending);
+			sortAndPrintLines(path, ascending);
 			System.out.println("=======Descending==========");
-			printLines(path, descending);
+			sortAndPrintLines(path, descending);
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void printLines(Path path, Comparator<String> comparator) throws IOException {
+	public static void sortAndPrintLines(Path path, Comparator<String> comparator) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			lines.skip(1).distinct().sorted(comparator).forEach(System.out::println);
+			lines.sorted(comparator).forEach(System.out::println);
 		}
 	}
 }

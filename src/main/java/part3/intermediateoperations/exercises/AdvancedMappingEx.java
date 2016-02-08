@@ -1,4 +1,4 @@
-package part3.mapping.solutions;
+package part3.intermediateoperations.exercises;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,33 +15,31 @@ import services.FileService;
  * @author AOHZ
  *
  */
-public class FileManagerSolutionEx2 {
+public class AdvancedMappingEx {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
 		try {
 			System.out.println("=======FlapMap==========");
-			countWordsUsingFlapMap(path);
+			printTheTotalNumberOfWords(path);
 
 			System.out.println("=======MapToInt==========");
-			printTheLengthOfEachWordhUsingMapToInt(path);
+			printTheLengthOfEachWordUsingMapToInt(path);
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void countWordsUsingFlapMap(Path path) throws IOException {
+	public static void printTheTotalNumberOfWords(Path path) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-
-			System.out.println(lines.flatMap((s) -> Stream.of(s.split(" "))).count());
+			
 		}
 	}
 
-	public static void printTheLengthOfEachWordhUsingMapToInt(Path path) throws IOException {
-		try (Stream<String> lines = Files.lines(path);) {
-
-			lines.flatMap((s) -> Stream.of(s.split(" "))).mapToInt(String::length).forEach(System.out::println);
+	public static void printTheLengthOfEachWordUsingMapToInt(Path path) throws IOException {
+		try (Stream<String> lines = Files.lines(path);) {			
+			
 		}
 	};
 	

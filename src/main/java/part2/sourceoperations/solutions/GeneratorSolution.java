@@ -1,15 +1,15 @@
-package part2.generators.exercises;
+package part2.sourceoperations.solutions;
 
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.function.IntSupplier;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import services.FileService;
 
-public class GeneratorExercise {
+public class GeneratorSolution {
 
 	public static void main(String args[]) {
 
@@ -36,31 +36,29 @@ public class GeneratorExercise {
 	}
 
 	private static Stream<String> generateUsingStreamOf() {
-	    // TODO return a stream with Strings: "Java 8", "Brown", "Bag", "Session"
-		return null;
+		System.out.println("========Sample end=========");
+		return Stream.of("Java 8", "Brown", "Bag", "Session");
+		
+		
 	}
 
 	private static IntStream generateUsingArraysStream() {
 		int[] numbers = { 2, 3, 5, 7, 11, 13 };
-		// TODO return an IntStream from the numbers array
-		return null;
+		return Arrays.stream(numbers);
 	}
 
 	private static IntStream generateUsingStreamGenerator() {
 		IntSupplier supplier = () -> 1;
-		// TODO return an IntStream generated from the supplier
-		return null;
+		return IntStream.generate(supplier);
 	}
-	
+
 	private static Stream<String> generateUsingFileLines() {
-		Stream<String> lines = Stream.empty();		
+		Stream<String> lines = Stream.empty();
 		try {
-			// TODO return a stream with the lines of the file at FileService.getFilePath() using the charset Charset.defaultCharset() 
-			Path pah = FileService.getFilePath();
-			Charset charset = Charset.defaultCharset();
-			
+			lines =  Files.lines(FileService.getFilePath(), Charset.defaultCharset());
 		} catch (Exception e) {
-			System.out.println(e);			
+			System.out.println(e);
+			lines.close();
 		}
 		return lines;
 	}

@@ -1,7 +1,9 @@
-package part3.mapping.exercises;
+package part3.intermediateoperations.solutions;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.stream.Stream;
 
 import services.FileService;
 
@@ -12,7 +14,7 @@ import services.FileService;
  * @author AOHZ
  *
  */
-public class FileManagerEx1 {
+public class MappingSolution {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
@@ -26,6 +28,9 @@ public class FileManagerEx1 {
 	}
 
 	public static void convertToUpperCase(Path path) throws IOException {
-		
+		try (Stream<String> lines = Files.lines(path);) {
+
+			lines.map((String s) -> s.length()).forEach((s) -> System.out.println(s));
+		}
 	}
 }
