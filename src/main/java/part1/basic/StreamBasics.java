@@ -18,7 +18,7 @@ import model.Dish;
  */
 public class StreamBasics {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		// Java 7
 		System.out.println("======Java 7======");
 
