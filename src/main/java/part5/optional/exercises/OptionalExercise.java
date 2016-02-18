@@ -4,75 +4,51 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Make this code NullPointerException safe using Optional 
+ * Implement the method getPersonNameNullSafe using optional. 
+ * The implemented method must pass all the tests.
+ * 
  * @author aohz
  *
  */
 public class OptionalExercise {
 
-	private static final String REAL_VALUE = "35.527756";
-	
-	@Test
-	public void testNoNullElements() {
-		Position position = new Position(new Latitude(REAL_VALUE));
-		Assert.assertEquals(REAL_VALUE, position.getLatitude().getValue());
-	}
-	
-	@Test
-	public void testValueIsNull() {
-		Position position = new Position(new Latitude(null));
-		Assert.assertNull(position.getLatitude().getValue());
-	}
-	
-	@Test
-	public void testPositionIsNull() {
-		Position position = null;
-		Assert.assertNull(position.getLatitude());
-	}
-	
-	
-	@Test
-	public void testLatitudeIsNull() {
-		Position position = new Position(null);
-		Assert.assertNull(position.getLatitude().getValue());
-	}	
-}
-
-class GPSData {
-
-	private Position position;
-
-	public GPSData(Position position) {
-		this.position = position;
+	public String getPersonNameNullSafe(Person person) {	
+		// TODO: reimplement this method using Optional
+		String name = null;
+		if(person != null){
+			name = person.getName();
+		}
+		return name;
 	}
 
-	public Position getPosition() {
-		return this.position;
+	@Test
+	public void test_getPersonNameNullSafe_NoNulls() {
+		Person person = new Person("Juan");
+		Assert.assertEquals("Juan", getPersonNameNullSafe(person));
+	}
+
+	@Test
+	public void test_getPersonNameNullSafe_NullPerson() {
+		Person person = null;
+		Assert.assertNull(getPersonNameNullSafe(person));
+	}
+
+	@Test
+	public void test_getPersonNameNullSafe_NullName() {
+		Person person = new Person(null);
+		Assert.assertNull(getPersonNameNullSafe(person));
 	}
 }
 
-class Position {
+class Person {
 
-	private Latitude latitude;
+	private String name;
 
-	public Position(Latitude latitude) {
-		this.latitude = latitude;
+	public Person(String name) {
+		this.name = name;
 	}
 
-	public Latitude getLatitude() {
-		return this.latitude;
-	}
-}
-
-class Latitude {
-
-	private String value;
-
-	public Latitude(String value) {
-		this.value = value;
-	}
-
-	public String getValue() {
-		return this.value;
+	public String getName() {
+		return this.name;
 	}
 }

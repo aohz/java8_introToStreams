@@ -5,85 +5,48 @@ import java.util.Optional;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Implement the method getPersonNameNullSafe using optional. The implemented
+ * method must pass all the tests.
+ * 
+ * @author aohz
+ *
+ */
 public class OptionalSolution {
 
-	private static final String DEFAULT_VALUE = "Empty";
-	private static final String REAL_VALUE = "35.527756";
-
-	private String getNullSafeValue(GPSData data) {
-		return Optional.ofNullable(data)
-				.flatMap(GPSData::getPosition)
-				.flatMap(Position::getLatitude)
-				.map(Latitude::getValue)
-				.orElse(DEFAULT_VALUE);
+	public String getPersonNameNullSafe(Person person) {
+		// reimplement this method using Optional
+		return Optional.ofNullable(person).map(Person::getName).orElse(null);
 	}
 
 	@Test
-	public void testNoNullElements() {
-		GPSData data = new GPSData(new Position(new Latitude(REAL_VALUE)));
-		Assert.assertEquals(REAL_VALUE, getNullSafeValue(data));
+	public void test_getPersonNameNullSafe_NoNulls() {
+		Person person = new Person("Juan");
+		Assert.assertEquals("Juan", getPersonNameNullSafe(person));
 	}
 
 	@Test
-	public void testPositionIsNull() {
-		GPSData data = new GPSData(null);
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
+	public void test_getPersonNameNullSafe_NullPerson() {
+		Person person = null;
+		Assert.assertNull(getPersonNameNullSafe(person));
 	}
 
 	@Test
-	public void testGpsDataIsNull() {
-		GPSData data = null;
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
-	}
-
-	@Test
-	public void testLatitudeIsNull() {
-		GPSData data = new GPSData(new Position(null));
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
-	}
-
-	@Test
-	public void testValueIsNull() {
-		GPSData data = new GPSData(new Position(new Latitude(null)));
-		Assert.assertEquals(DEFAULT_VALUE, getNullSafeValue(data));
+	public void test_getPersonNameNullSafe_NullName() {
+		Person person = new Person(null);
+		Assert.assertNull(getPersonNameNullSafe(person));
 	}
 }
 
-class GPSData {
+class Person {
 
-	private Position position;
+	private String name;
 
-	public GPSData(Position position) {
-		this.position = position;
+	public Person(String name) {
+		this.name = name;
 	}
 
-	public Optional<Position> getPosition() {
-		return Optional.ofNullable(this.position);
-	}
-}
-
-class Position {
-
-	private Latitude latitude;
-
-	public Position(Latitude latitude) {
-		this.latitude = latitude;
-	}
-
-	public Optional<Latitude> getLatitude() {
-		return Optional.ofNullable(this.latitude);
-	}
-}
-
-class Latitude {
-
-	private String value;
-
-	public Latitude(String value) {
-		this.value = value;
-	}
-
-	public String getValue() {
-		return value;
+	public String getName() {
+		return this.name;
 	}
 }
