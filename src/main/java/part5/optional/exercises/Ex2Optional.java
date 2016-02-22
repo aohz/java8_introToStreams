@@ -1,4 +1,4 @@
-package part5.optional.solution;
+package part5.optional.exercises;
 
 import java.util.Optional;
 
@@ -10,17 +10,13 @@ import org.junit.Test;
  * @author aohz
  *
  */
-public class OptionalSolution2 {
+public class Ex2Optional {
 
 	private static final String DEFAULT_VALUE = "Empty";
 	private static final String REAL_VALUE = "35.527756";
 
 	private String getNullSafeValue(GPSData data) {
-		return Optional.ofNullable(data)
-				.flatMap(GPSData::getPosition)
-				.flatMap(Position::getLatitude)
-				.map(Latitude::getValue)
-				.orElse(DEFAULT_VALUE);
+		return null;
 	}
 
 	@Test

@@ -6,7 +6,7 @@ import java.util.List;
 import model.Trader;
 import model.Transaction;
 
-public class QueriesLikeExercises {
+public class ExQueriesLike {
 
     public static void main(String... args) {
         Trader raoul = new Trader("Raoul", "Cambridge");

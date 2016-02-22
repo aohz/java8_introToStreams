@@ -12,7 +12,7 @@ import model.Person;
  * @author AOHZ
  *
  */
-public class TraversingEx {
+public class Ex1Traversing {
 
 	public static void main(String args[]) {
 

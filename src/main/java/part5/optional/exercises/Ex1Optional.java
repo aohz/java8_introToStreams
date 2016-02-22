@@ -10,7 +10,7 @@ import org.junit.Test;
  * @author aohz
  *
  */
-public class OptionalExercise {
+public class Ex1Optional {
 
 	public String getPersonNameNullSafe(Person person) {	
 		// TODO: reimplement this method using Optional

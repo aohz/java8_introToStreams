@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
-public class QueriesLikeSolutions {
+public class SolExQueriesLike {
 
     public static void main(String... args) {
         Trader raoul = new Trader("Raoul", "Cambridge");

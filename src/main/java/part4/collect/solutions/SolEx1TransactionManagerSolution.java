@@ -18,7 +18,7 @@ import model.Transaction;
  * @author AOHZ
  *
  */
-public class TransactionManagerSolutionEx1 {
+public class SolEx1TransactionManagerSolution {
 
 	public static void main(String... args) {
 		List<Transaction> transactions = getTransactions();

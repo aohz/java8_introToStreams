@@ -13,7 +13,7 @@ import services.FileService;
  * @author aohz
  *
  */
-public class FilteringSolution {
+public class SolEx1Filtering {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();

@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class GeneratorEx {
+public class Ex1Generator {
 
 	public static void main(String args[]) {
 

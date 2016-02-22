@@ -17,7 +17,7 @@ import services.FileService;
  * @author AOHZ
  *
  */
-public class SortingSolution {
+public class SolEx2Sorting {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();

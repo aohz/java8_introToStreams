@@ -1,4 +1,4 @@
-package part4.match.solutions;
+package part4.match.exercises;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +14,7 @@ import services.FileService;
  * 
  * @param args
  */
-public class MatchingSolution {
+public class Ex1Matching {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
@@ -36,20 +36,20 @@ public class MatchingSolution {
 
 	public static void verifyAllMatch(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.allMatch((s) -> s.contains(wordToFind)));
+			System.out.println("TODO: Replace with stream processing");
 		}
 	}
 	
 	public static void verifyAnyMatch(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.anyMatch((s) -> s.contains(wordToFind)));
-		}		
+			System.out.println("TODO: Replace with stream processing");
+		}
 	}
 
 
 	public static void getFirst(Path path, String wordToFind) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-			System.out.println(lines.filter((s) -> s.contains(wordToFind)).findFirst().get());
+			System.out.println("TODO: Replace with stream processing");
 		}
 	}
 }

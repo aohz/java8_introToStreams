@@ -15,7 +15,7 @@ import services.FileService;
  * @author AOHZ
  *
  */
-public class AdvancedMappingEx {
+public class Ex4AdvancedMappingEx {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();

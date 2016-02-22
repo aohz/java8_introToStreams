@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import services.FileService;
 
-public class GeneratorSolution {
+public class SolEx1Generator {
 
 	public static void main(String args[]) {
 

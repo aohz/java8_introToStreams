@@ -12,7 +12,7 @@ import model.Person;
  * @author AOHZ
  *
  */
-public class TraversingSolution {
+public class SolEx1Traversing {
 
 	public static void main(String args[]) {
 

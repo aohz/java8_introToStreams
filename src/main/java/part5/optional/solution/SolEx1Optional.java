@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author aohz
  *
  */
-public class OptionalSolution {
+public class SolEx1Optional {
 
 	public String getPersonNameNullSafe(Person person) {
 		// reimplement this method using Optional

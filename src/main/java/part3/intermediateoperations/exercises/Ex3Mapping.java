@@ -9,19 +9,22 @@ import services.FileService;
 
 /**
  * 
- * Using “data.txt” convert lines to Uppercase
+ * Using “data.txt” 
+ * - convert lines to Uppercase
+ * - Print the length of each line
  * 
  * @author AOHZ
  *
  */
-public class MappingEx {
+public class Ex3Mapping {
 
 	public static void main(String[] args) {
 		Path path = FileService.getFilePath();
 		try {
 			System.out.println("=======To Upper Case==========");
 			convertToUpperCase(path);
-
+			System.out.println("=======Print the length of each line==========");
+			printTheLengthOfEachLine(path);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -29,7 +32,12 @@ public class MappingEx {
 
 	public static void convertToUpperCase(Path path) throws IOException {
 		try (Stream<String> lines = Files.lines(path);) {
-
+			
+		}
+	}
+	
+	public static void printTheLengthOfEachLine(Path path) throws IOException {
+		try (Stream<String> lines = Files.lines(path);) {
 			
 		}
 	}
