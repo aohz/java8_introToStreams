@@ -37,9 +37,7 @@ public class SolEx1Generator {
 
 	private static Stream<String> generateUsingStreamOf() {
 		System.out.println("========Sample end=========");
-		return Stream.of("Java 8", "Brown", "Bag", "Session");
-		
-		
+		return Stream.of("Java 8", "Brown", "Bag", "Session");		
 	}
 
 	private static IntStream generateUsingArraysStream() {
@@ -58,6 +56,7 @@ public class SolEx1Generator {
 			lines =  Files.lines(FileService.getFilePath(), Charset.defaultCharset());
 		} catch (Exception e) {
 			System.out.println(e);
+		} finally {
 			lines.close();
 		}
 		return lines;

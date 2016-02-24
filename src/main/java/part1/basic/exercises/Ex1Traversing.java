@@ -24,15 +24,15 @@ public class Ex1Traversing {
 
 		Predicate<Person> pred = (p) -> p.getAge() > 65;
 
-		// Java 7
-		System.out.println("======Java 7======");
-		printOldPeopleNamesInJava7(people, pred);
+		// without Stream
+		System.out.println("======Java without Streams======");
+		printOldPeopleNamesWithoutStreams(people, pred);
 		// Java 8
 		System.out.println("======Java 8======");
 		printOldPeopleNamesInJava8(people, pred);
 	}
 
-	private static void printOldPeopleNamesInJava7(List<Person> people, Predicate<Person> pred) {
+	private static void printOldPeopleNamesWithoutStreams(List<Person> people, Predicate<Person> pred) {
 
 		// Without Streams
 		people.forEach(p -> {
