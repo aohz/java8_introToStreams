@@ -47,7 +47,7 @@ public class ForkJoinSample {
 				.map(n -> printOperationDetails(2, n));
 						
 		
-		ForkJoinTask<Long> future = forkJoinPool.submit(() -> stream.count());
+		ForkJoinTask<?> future = forkJoinPool.submit(() -> stream.count());
 
 		System.out.println("Main threa does something else");
 
