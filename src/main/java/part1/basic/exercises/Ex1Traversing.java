@@ -22,7 +22,7 @@ public class Ex1Traversing {
 		people.add(new Person("Mary", "Kay", 30));
 		people.add(new Person("Mike", "Tyson", 73));
 
-		Predicate<Person> pred = (p) -> p.getAge() > 65;
+		Predicate<Person> pred = p -> p.getAge() > 65;
 
 		// without Stream
 		System.out.println("======Java without Streams======");

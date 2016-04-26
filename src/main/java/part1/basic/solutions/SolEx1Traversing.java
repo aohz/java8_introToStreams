@@ -22,7 +22,7 @@ public class SolEx1Traversing {
 		people.add(new Person("Mary", "Kay", 30));
 		people.add(new Person("Mike", "Tyson", 73));
 
-		Predicate<Person> pred = (p) -> p.getAge() > 65;
+		Predicate<Person> pred = p -> p.getAge() > 65;
 
 		// without Stream
 		System.out.println("======Java without Streams======");
@@ -45,6 +45,6 @@ public class SolEx1Traversing {
 	private static void printOldPeopleNamesInJava8(List<Person> people, Predicate<Person> pred) {
 
 		// With Streams
-		people.stream().filter(pred).forEach(p -> System.out.println(p.getName()));
+		people.stream().filter(pred).map(Person::getName).forEach(System.out::println);
 	}
 }

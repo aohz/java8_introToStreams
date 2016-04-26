@@ -27,7 +27,7 @@ public class Ex4AdvancedMappingEx {
 			printTheLengthOfEachWordUsingMapToInt(path);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

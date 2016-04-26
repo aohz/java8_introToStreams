@@ -24,7 +24,7 @@ public class Ex2Sorting {
 		try {
 			printLines(path, null);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

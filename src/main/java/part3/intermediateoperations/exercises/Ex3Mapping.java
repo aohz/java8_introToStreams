@@ -26,7 +26,7 @@ public class Ex3Mapping {
 			System.out.println("=======Print the length of each line==========");
 			printTheLengthOfEachLine(path);
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 

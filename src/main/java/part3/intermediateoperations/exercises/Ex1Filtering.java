@@ -20,13 +20,14 @@ public class Ex1Filtering {
 		try {
 			printLineNumber(path);	
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e);
 		}
 	}
 
 	public static void printLineNumber(Path path) throws IOException {
 		int nLines = 0;
 		try (Stream<String> lines = Files.lines(path);) {
+			lines.count();
 			
 		}
 		System.out.println("Lines: " + nLines);
